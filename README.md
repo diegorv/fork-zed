@@ -1,46 +1,27 @@
-# Zed
+# Zed — Personal Privacy Fork
 
-[![Zed](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zed-industries/zed/main/assets/badge/v0.json)](https://zed.dev)
-[![CI](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml/badge.svg)](https://github.com/zed-industries/zed/actions/workflows/run_tests.yml)
+> [!CAUTION]
+> **This is a personal fork for proof-of-concept work and individual use.**
+> It is **not recommended for general use**. zed.dev sign-in is stubbed
+> out, which disables hosted AI, edit predictions (Zeta), collaboration,
+> channels, calls, project sharing, identified telemetry, and the AI
+> onboarding flow.
+>
+> For the upstream project, see <https://github.com/zed-industries/zed>.
 
-Welcome to Zed, a high-performance, multiplayer code editor from the creators of [Atom](https://github.com/atom/atom) and [Tree-sitter](https://github.com/tree-sitter/tree-sitter).
+## What this fork is
 
----
+- The Zed editor with every feature that requires a `zed.dev` account
+  switched off at the startup entry point.
+- Bring-your-own-key LLM providers (Anthropic, OpenAI, Gemini, xAI,
+  DeepSeek, Ollama, LMStudio, Bedrock, OpenAI-compatible), GitHub
+  Copilot, and the ChatGPT subscription provider keep working.
 
-### Installation
+## Where things live
 
-On macOS, Linux, and Windows you can [download Zed directly](https://zed.dev/download) or install Zed via your local package manager ([macOS](https://zed.dev/docs/installation#macos)/[Linux](https://zed.dev/docs/linux#installing-via-a-package-manager)/[Windows](https://zed.dev/docs/windows#package-managers)).
-
-Other platforms are not yet available:
-
-- Web ([tracking issue](https://github.com/zed-industries/zed/issues/5396))
-
-### Developing Zed
-
-- [Building Zed for macOS](./docs/src/development/macos.md)
-- [Building Zed for Linux](./docs/src/development/linux.md)
-- [Building Zed for Windows](./docs/src/development/windows.md)
-
-### Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for ways you can contribute to Zed.
-
-Also... we're hiring! Check out our [jobs](https://zed.dev/jobs) page for open roles.
-
-### Licensing
-
-License information for third party dependencies must be correctly provided for CI to pass.
-
-We use [`cargo-about`](https://github.com/EmbarkStudios/cargo-about) to automatically comply with open source licenses. If CI is failing, check the following:
-
-- Is it showing a `no license specified` error for a crate you've created? If so, add `publish = false` under `[package]` in your crate's Cargo.toml.
-- Is the error `failed to satisfy license requirements` for a dependency? If so, first determine what license the project has and whether this system is sufficient to comply with this license's requirements. If you're unsure, ask a lawyer. Once you've verified that this system is acceptable add the license's SPDX identifier to the `accepted` array in `script/licenses/zed-licenses.toml`.
-- Is `cargo-about` unable to find the license for a dependency? If so, add a clarification field at the end of `script/licenses/zed-licenses.toml`, as specified in the [cargo-about book](https://embarkstudios.github.io/cargo-about/cli/generate/config.html#crate-configuration).
-
-## Sponsorship
-
-Zed is developed by **Zed Industries, Inc.**, a for-profit company.
-
-If you’d like to financially support the project, you can do so via GitHub Sponsors.
-Sponsorships go directly to Zed Industries and are used as general company revenue.
-There are no perks or entitlements associated with sponsorship.
+- The unmodified upstream README is in [README-UPSTREAM.md](./README-UPSTREAM.md).
+- The rationale, required settings, breakage scope, and revert steps
+  are in [PRIVACY-MODE.md](./PRIVACY-MODE.md).
+- The script that keeps this fork in sync with
+  [zed-industries/zed](https://github.com/zed-industries/zed) is at
+  [`privacy/sync-upstream.bash`](./privacy/sync-upstream.bash).
